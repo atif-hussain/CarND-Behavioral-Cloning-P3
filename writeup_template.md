@@ -72,7 +72,7 @@ For details about how I created the training data, see the next section.
 
 ####1. Solution Design Approach
 
-The overall strategy for deriving a model architecture was to ...
+The overall strategy for deriving a model architecture was to ...f
 
 My first step was to use a convolution neural network model similar to the NVidea's. I thought this model might be appropriate because it worked for many others and was simple enough to implement. 
 
@@ -93,17 +93,17 @@ The final model architecture consisted of a convolution neural network with the 
 
 ####3. Creation of the Training Set & Training Process
 
-* To capture good driving behavior, and lots of data, started with provided input data. Then using 10Hz simulator on a windows PC with keyboard input, 
+* To capture good driving behavior, and lots of data, started with provided input data. Then using 10Hz simulator on a windows PC with only CPU with keyboard input, 
 * I recorded few laps on track one. 
 * Then redid more driving to generate more data with smooth driving in both directions, using center lane driving. 
 * I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to steer back. 
-* To augment the data sat, and create more data in steering back from sides, took data from all 3 camera angles. The images from left and right camera angles were applied steering correction. 
+* To augment the data sat, and create more data in steering back from sides, took data from all 3 camera angles. The images from left and right camera angles were applied steering angle correction. This helped both increase number of test cases, and teaches cars that are off center to steer back to the middle.  
 * While calling the model using Keras, randomly shuffled the data set with 20% allotted to validation set. 
 * I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 4 as evidenced by reducing loss. I used an adam optimizer so that manually training the learning rate wasn't necessary.
 
 ####4. Implementation Summary 
 
-* Managed to get results for first track with default 10hz simulator and keyboard input available on std Windows PC, with no smoothing and filter algorithms. 
+* Managed to get results for first track with default 10hz simulator and keyboard input available on std Windows PC and CPU, with no smoothing and filter algorithms. 
 * Just used adam optimizer with default learning rate for 4 EPOCHs and no successive refinement. 
 * The key for generating enough data, covering non center of lane driving, so model learns how to steer back. 
 * Image argumentation using 3 cameras with .3 steering angle adjustments, but not flipping image. 
