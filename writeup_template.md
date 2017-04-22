@@ -15,17 +15,6 @@ The goals / steps of this project are the following:
 * Test that the model successfully drives around track one without leaving the road
 * Summarize the results with a written report
 
-
-[//]: # (Image References)
-
-[image1]: ./examples/placeholder.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
-[image6]: ./examples/placeholder_small.png "Normal Image"
-[image7]: ./examples/placeholder_small.png "Flipped Image"
-
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
 
@@ -119,4 +108,5 @@ The final model architecture consisted of a convolution neural network with the 
 * The key for generating enough data, covering non center of lane driving, so model learns how to steer back. 
 * Image argumentation using 3 cameras with .3 steering angle adjustments, but not flipping image. 
 * Used AWS GPU for training. Did not resize input image, retaining original size. When started getting Memory error loading images into memory on AWS, instead of using Python generators, culled some of my training data :)
+
 And i have a model which can make multiple laps, reliably.
